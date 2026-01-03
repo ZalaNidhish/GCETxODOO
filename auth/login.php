@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'message' => 'login successfull'
         ];
 
-        header('Location: ../' . $user['role'] . '/dashboard.php');
+        header('Location: ../employee_dashboard.php');
         exit();
 
     } else {

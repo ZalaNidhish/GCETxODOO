@@ -5,13 +5,17 @@ session_start();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
+    $employeeID = $_POST['employeeID'];
+    $username = $_POST['fullname'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $confirm_password = $_POST['confirmPassword'];
+    $department = $_POST['department'];
+    $position = $_POST['position'];
 
     // Basic validation
-    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+    if (empty($employeeID) || empty($username) || empty($email) || empty($phone) || empty($password) || empty($confirm_password) || empty($department) || empty($position)) {
           $_SESSION['toast'] = [
             'type' => 'fail',
             'message' => 'Invalid data'
@@ -62,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Insert new user into the database
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+    $sql = "INSERT INTO users (employee_id, fullname, email, password, contact, department, position) VALUES ('$employeeID', '$username', '$email', '$hashed_password', '$contact', '$department', '$postition' )";
     if (mysqli_query($conn, $sql)) {
 
         $_SESSION['toast'] = [
