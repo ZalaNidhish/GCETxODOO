@@ -1,7 +1,5 @@
--- Dayflow HRMS Database Schema
-
-CREATE DATABASE IF NOT EXISTS dayflow_hrms;
-USE dayflow_hrms;
+CREATE DATABASE IF NOT EXISTS hrms;
+USE hrms;
 
 -- Users Table
 CREATE TABLE users (
@@ -133,7 +131,7 @@ CREATE TABLE notifications (
 
 -- Insert default admin user (password: Admin@123)
 INSERT INTO users (employee_id, email, password, role, is_verified) 
-VALUES ('ADMIN001', 'admin@dayflow.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', TRUE);
+VALUES ('ADMIN001', 'admin@admin.com', '$2y$10$KxRHIYsStcFBhDT8kForQepsUlBHDo8ACvSgI3AjJDB0vpiEddHGC', 'admin', TRUE);
 
 INSERT INTO employee_profiles (user_id, first_name, last_name, department, designation, joining_date, employment_type)
 VALUES (1, 'System', 'Administrator', 'IT', 'System Admin', CURDATE(), 'full-time');
