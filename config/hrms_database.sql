@@ -1,7 +1,7 @@
 -- Dayflow HRMS Database Schema
 
-CREATE DATABASE IF NOT EXISTS dayflow_hrms;
-USE dayflow_hrms;
+CREATE DATABASE IF NOT EXISTS hrms;
+USE hrms;
 
 -- Users Table
 CREATE TABLE users (
